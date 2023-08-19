@@ -1,2 +1,2 @@
 # PDL
-Code for the paper " PDL: REGULARIZING MULTIPLE INSTANCE LEARNING WITH PROGRESSIVE DROPOUT LAYERS "
+Code for the paper " PDL: Regularizing Multiple Instance Learning with Progressive Dropout Layers "
