@@ -1,4 +1,4 @@
-# PDL: Regularizing Multiple Instance Learning with Progressive Dropout Layers
+![image](https://github.com/ChongQingNoSubway/PDL/assets/63658823/636f7444-c2f7-4378-845a-2e56a4ce9d49)# PDL: Regularizing Multiple Instance Learning with Progressive Dropout Layers
 
 ### [PDL: Regularizing Multiple Instance Learning with Progressive Dropout Layers](https://arxiv.org/pdf/2308.10112.pdf)
 
@@ -14,6 +14,8 @@ Multiple instance learning (MIL) was a weakly supervised learning approach that 
 <img src="images/2.png"/>
 <img src="images/1.png"/>
 
+**Visualization result**
+<img src="images/4.png"/>
 
 ## How to use
 ### In Network.py
