@@ -10,4 +10,6 @@ Multiple instance learning (MIL) was a weakly supervised learning approach that 
 **Framework** 
 <img src="images/3.png"/>
 
-**Result**
+**Experiment Result**
+<img src="images/2.png"/>
+<img src="images/Image_20230822011801.png"/>
