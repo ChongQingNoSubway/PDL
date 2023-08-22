@@ -15,8 +15,8 @@ Multiple instance learning (MIL) was a weakly supervised learning approach that 
 <img src="images/1.png"/>
 
 
-### How to use
-For Network.py
+## How to use
+### In Network.py
 ```
 from models.dropout import Pdropout
 .......
@@ -44,5 +44,16 @@ class TransMIL(nn.Module):
         self.layer2 = TransLayer(dim=mDim)
         self.norm = nn.LayerNorm(mDim)
         self._fc2 = nn.Linear(mDim, self.n_classes)
+........
+```
+### IN train.py
+```
+from models.dropout import LinearScheduler
+.......
+milnet = TransMIL(args.feats_size, args.num_classes, mDim=args.L).cuda()
+progressive_schedule = LinearScheduler(milnet,start_value=0,stop_value=P_max,nr_steps=args.num_epochs)
+
+for epoch in range(1, args.num_epochs + 1):
+        progressive_schedule.step()
 ........
 ```
