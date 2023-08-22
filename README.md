@@ -1,4 +1,4 @@
-![image](https://github.com/ChongQingNoSubway/PDL/assets/63658823/636f7444-c2f7-4378-845a-2e56a4ce9d49)# PDL: Regularizing Multiple Instance Learning with Progressive Dropout Layers
+# PDL: Regularizing Multiple Instance Learning with Progressive Dropout Layers
 
 ### [PDL: Regularizing Multiple Instance Learning with Progressive Dropout Layers](https://arxiv.org/pdf/2308.10112.pdf)
 
