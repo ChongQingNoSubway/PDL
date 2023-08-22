@@ -57,3 +57,36 @@ for epoch in range(1, args.num_epochs + 1):
         progressive_schedule.step()
 ........
 ```
+
+### Costume the interpolation methods in dropout.py. (You could custom the interpolation based on number of instance, number of epoch, size of dataset)
+```
+    # For dropout layers
+    def non_linear_interpolation(self,max,min,num):
+        e_base = 20
+        log_e = 1.5
+        res = (max - min)/log_e* np.log10((np.linspace(0, np.power(10,(log_e)) - 1, num)+ 1)) + min
+        #res = (max-min)/e_base *(np.power(10,(np.linspace(0, np.log10(e_base+1), num))) - 1) + min
+        #res = (max - min)*(0.5*(1-np.cos(np.linspace(0, math.pi, num)))) + min
+        res = torch.from_numpy(res).float()
+        return res
+
+    # For progressive processing function
+    def dropvalue_sampler(self,min,max,num):
+        e_base = 20
+        log_e = 1.5
+        res = (max - min)/log_e* np.log10((np.linspace(0, np.power(10,(log_e)) - 1, num)+ 1)) + min
+        #res =  (max - min)*(0.5*(1-np.cos(np.linspace(0, math.pi, num)))) + min
+        #res = (max-min)/e_base *(np.power(10,(np.linspace(0, np.log10(e_base+1), num))) - 1) + min
+```
+
+### Citation
+```
+@misc{zhu2023pdl,
+      title={PDL: Regularizing Multiple Instance Learning with Progressive Dropout Layers}, 
+      author={Wenhui Zhu and Peijie Qiu and Oana M. Dumitrascu and Yalin Wang},
+      year={2023},
+      eprint={2308.10112},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV}
+}
+```
