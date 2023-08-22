@@ -58,7 +58,7 @@ for epoch in range(1, args.num_epochs + 1):
 ........
 ```
 
-### Costume the interpolation methods in dropout.py. (You could custom the interpolation based on number of instance, number of epoch, size of dataset)
+### The interpolation methods in dropout.py. (You could custom the interpolation based on number of instance, number of epoch, size of dataset)
 ```
     # For dropout layers
     def non_linear_interpolation(self,max,min,num):
