@@ -13,3 +13,36 @@ Multiple instance learning (MIL) was a weakly supervised learning approach that 
 **Experiment Result**
 <img src="images/2.png"/>
 <img src="images/1.png"/>
+
+
+### How to use
+For Network.py
+```
+from models.dropout import Pdropout
+.......
+class TransMIL(nn.Module):
+    def __init__(self, input_size, n_classes, mDim=512):
+        super(TransMIL, self).__init__()
+        self.pos_layer = PPEG(dim=mDim)
+        self._fc1 = nn.Sequential(nn.Linear(input_size, mDim), nn.ReLU(), nn.Dropout(0.2))
+        # the fc1 as the middle layer
+        self._fc1 = nn.Sequential(
+          nn.Linear(input_size, 256),
+          nn.ReLU(),
+          # append the PDL after Relu activation function
+          Pdropout(0.35),
+          nn.Linear(256, 128),
+          nn.ReLU(),
+          Pdropout(0.35),
+          nn.Linear(128, mDim),
+          nn.ReLU(),
+          Pdropout(0.35)
+        )
+        self.cls_token = nn.Parameter(torch.randn(1, 1, mDim))
+        self.n_classes = n_classes
+        self.layer1 = TransLayer(dim=mDim)
+        self.layer2 = TransLayer(dim=mDim)
+        self.norm = nn.LayerNorm(mDim)
+        self._fc2 = nn.Linear(mDim, self.n_classes)
+........
+```
