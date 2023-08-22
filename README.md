@@ -14,7 +14,7 @@ Multiple instance learning (MIL) was a weakly supervised learning approach that 
 <img src="images/2.png"/>
 <img src="images/1.png"/>
 <img src="images/4.png"/>
-
+<img src="images/5.png"/>
 ## How to use
 ### In Network.py
 ```
