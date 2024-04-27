@@ -41,7 +41,7 @@ class Pdropout(nn.Module):
         #print(interpolation)
         mask = torch.zeros_like(importance)
         mask = mask.to(input.device)
-        _, indx = torch.sort(importance,dim=0)
+        _, indx = torch.sort(importance,dim=0,descending=True)
         #print(indx)
         idx = indx.view(-1)
         mask.index_add_(0,idx,interpolation)
