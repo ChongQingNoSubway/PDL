@@ -22,7 +22,7 @@ class Pdropout(nn.Module):
         else:
             #input_2 = self.embedding(input)
             #print(input.shape)
-            importances = torch.mean(input,dim=1,keepdim=True)
+            importances = torch.mean(input,dim=1)
             #importances = torch.sigmoid(importances)
             importances = F.softmax(importances,dim=0)
             #print(importances)
