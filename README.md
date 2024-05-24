@@ -83,7 +83,7 @@ for epoch in range(1, args.num_epochs + 1):
 ```
 @misc{zhu2023pdl,
       title={PDL: Regularizing Multiple Instance Learning with Progressive Dropout Layers}, 
-      author={Wenhui Zhu and Peijie Qiu and Oana M. Dumitrascu and Yalin Wang},
+      author={Wenhui Zhu and Peijie Qiu and Xiwen Chen and Oana M. Dumitrascu and Yalin Wang},
       year={2023},
       eprint={2308.10112},
       archivePrefix={arXiv},
