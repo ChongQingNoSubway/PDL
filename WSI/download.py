@@ -21,6 +21,10 @@ def download_url(url, output_path):
 def unzip_data(zip_path, data_path):
     os.makedirs(data_path, exist_ok=True)
     with zipfile.ZipFile(zip_path, 'r') as zip_ref:
+        for member in zip_ref.infolist():
+            target = os.path.realpath(os.path.join(data_path, member.filename))
+            if os.path.commonpath([target, os.path.realpath(data_path)]) != os.path.realpath(data_path):
+                raise ValueError(f"Unsafe archive member: {member.filename}")
         zip_ref.extractall(data_path)
     
         
